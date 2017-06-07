@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- http://struts.apache.org/2.x/docs/hello-world-using-struts-2.html -->
+
+<struts>
+	<!-- http://struts.apache.org/2.0.11/docs/devmode.html-->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="global"/>
+
+
+	<package name="social-package" extends="struts-default">
+
+		<action name="index">
+			<result>pages/welcome/index.jsp</result>
+		</action>
+		<action name="comment" class="com.class3601.social.actions.CommentAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>   
+  		</action>
+	
+	
+  		
+  		<action name="post" class="com.class3601.social.actions.PostAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+  		
+  		<action name="search" class="com.class3601.social.actions.SearchAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+  		
+  		
+  		<action name="getPosts" class="com.class3601.social.actions.GetPostAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result> 
+    		
+        
+  		</action>
+  		
+  		<action name="getComments" class="com.class3601.social.actions.GetCommentsAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result> 
+    		
+        
+  		</action>
+  		
+  		
+
+
+  		
+  		<action name="votes" class="com.class3601.social.actions.VotesAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+  		
+  		<action name="cVotes" class="com.class3601.social.actions.CommentVotesAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+  		
+  		<action name="flag" class="com.class3601.social.actions.FlagPostAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+  		
+  		<action name="flagC" class="com.class3601.social.actions.FlagCommentAction" method="execute">
+    		<result name="success">pages/example/example-test.jsp</result>
+    		<result name="fail">pages/example/example-errors.jsp</result>
+    		
+    		<exception-mapping exception="java.lang.NullPointerException"
+         	result="error" />
+        	 <result name="success">/pages/example/example-test.jsp</result>
+        	 <result name="error">/pages/example/example-errors.jsp</result>     
+  		</action>
+
+	</package>
+
+</struts>
